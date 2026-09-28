@@ -22,7 +22,7 @@
 
     --accent: var(--purple);
 
-    --theme-background: url("./images/planet.jpg");
+    --theme-background: url("./planet.jpg");
 }
 
 /* =====================================
@@ -44,7 +44,7 @@
     --blue: #64aaff;
     --cyan: #6fe4e0;
 
-    --theme-background: url("./images/ocean.jpg");
+    --theme-background: url("./ocean.jpg");
 }
 
 /* =====================================
@@ -66,7 +66,7 @@
     --blue: #9292b8;
     --cyan: #c5c5d8;
 
-    --theme-background: url("./images/midnight.jpg");
+    --theme-background: url("./midnight.jpg");
 }
 
 /* =====================================
@@ -88,7 +88,7 @@
     --blue: #91d8b4;
     --cyan: #a0edca;
 
-    --theme-background: url("./images/forest.jpg");
+    --theme-background: url("./forest.jpg");
 }
 
 /* =====================================
@@ -110,7 +110,7 @@
     --blue: #ffb16d;
     --cyan: #ffcc91;
 
-    --theme-background: url("./images/solar.jpg");
+    --theme-background: url("./solar.jpg");
 }
 
 /* =====================================
