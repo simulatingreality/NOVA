@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVA | Learn</title>
+
+    <script>
+        try {
+            const saved = JSON.parse(
+                localStorage.getItem("novaAppearance")
+            );
+
+            if (saved) {
+
+                if (saved.theme) {
+                    document.documentElement.dataset.theme =
+                        saved.theme;
+                }
+
+                if (saved.mode) {
+                    document.documentElement.dataset.mode =
+                        saved.mode;
+                }
+
+                if (saved.accent) {
+                    document.documentElement.style.setProperty(
+                        "--accent",
+                        saved.accent
+                    );
+
+                    document.documentElement.style.setProperty(
+                        "--purple",
+                        saved.accent
+                    );
+                }
+
+                if (saved.background) {
+                    document.documentElement.style.setProperty(
+                        "--custom-background",
+                        `url("${saved.background}")`
+                    );
+                }
+
+            }
+
+        } catch (error) {
+            // Use default appearance
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="planet-background"></div>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="index.html" class="logo">
+            <span class="logo-symbol">✦</span>
+            NOVA
+        </a>
+
+        <p class="nav-label">WORKSPACE</p>
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-item">
+                <span>◉</span> Home
+            </a>
+
+            <a href="learn.html" class="nav-item active">
+                <span>◇</span> Learn
+            </a>
+
+            <a href="practice.html" class="nav-item">
+                <span>✧</span> Practice
+            </a>
+
+            <a href="simulate.html" class="nav-item">
+                <span>🧪</span> Simulate
+            </a>
+
+            <a href="explore.html" class="nav-item">
+                <span>◌</span> Explore
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-divider"></div>
+
+
+        <p class="nav-label">SUBJECTS</p>
+
+        <nav class="sidebar-nav">
+
+            <a href="learn.html" class="nav-item">
+                <span>⚛</span> Physics
+            </a>
+
+            <a href="learn.html" class="nav-item">
+                <span>📐</span> Mathematics
+            </a>
+
+            <a href="learn.html" class="nav-item">
+                <span>🌌</span> Astrophysics
+            </a>
+
+            <a href="learn.html" class="nav-item">
+                <span>🧪</span> Chemistry
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-spacer"></div>
+
+
+        <div class="sidebar-divider"></div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-item">
+                <span>✦</span> AI Tutor
+            </a>
+
+            <button type="button" class="nav-item" id="settings-button">
+                <span>⚙</span> Settings
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN APPLICATION -->
+    <div class="app">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="breadcrumb">
+                <span class="muted">Workspace</span>
+                <span>/</span>
+                <strong>Learn</strong>
+            </div>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard">
+
+            <section class="welcome">
+
+                <div>
+
+                    <p class="eyebrow">
+                        NOVA LEARNING
+                    </p>
+
+                    <h1>
+                        Learn
+                    </h1>
+
+                    <p class="welcome-subtitle">
+                        Explore courses and discover something new.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECOMMENDED COURSES -->
+            <section class="section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            RECOMMENDED FOR YOU
+                        </p>
+
+                        <h2>
+                            Continue learning
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="learning-grid">
+
+
+                    <!-- PHYSICS -->
+                    <article class="learning-card">
+
+                        <div class="card-top">
+
+                            <span class="subject-icon physics-icon">
+                                ⚛
+                            </span>
+
+                        </div>
+
+                        <p class="card-category">
+                            PHYSICS
+                        </p>
+
+                        <h3>
+                            Mechanics
+                        </h3>
+
+                        <p class="card-description">
+                            Motion, forces and energy.
+                        </p>
+
+                        <div class="progress-info">
+
+                            <span>
+                                Course progress
+                            </span>
+
+                            <strong>
+                                78%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-track">
+
+                            <div class="progress-fill physics-progress"></div>
+
+                        </div>
+
+                        <a href="#" class="card-link">
+                            Continue learning <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- MATHEMATICS -->
+                    <article class="learning-card">
+
+                        <div class="card-top">
+
+                            <span class="subject-icon maths-icon">
+                                ∑
+                            </span>
+
+                        </div>
+
+                        <p class="card-category">
+                            MATHEMATICS
+                        </p>
+
+                        <h3>
+                            Calculus
+                        </h3>
+
+                        <p class="card-description">
+                            Limits, derivatives and integrals.
+                        </p>
+
+                        <div class="progress-info">
+
+                            <span>
+                                Course progress
+                            </span>
+
+                            <strong>
+                                46%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-track">
+
+                            <div class="progress-fill maths-progress"></div>
+
+                        </div>
+
+                        <a href="#" class="card-link">
+                            Continue learning <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- ASTROPHYSICS -->
+                    <article class="learning-card">
+
+                        <div class="card-top">
+
+                            <span class="subject-icon astro-icon">
+                                ✧
+                            </span>
+
+                        </div>
+
+                        <p class="card-category">
+                            ASTROPHYSICS
+                        </p>
+
+                        <h3>
+                            Stars & Galaxies
+                        </h3>
+
+                        <p class="card-description">
+                            Stellar evolution and the cosmos.
+                        </p>
+
+                        <div class="progress-info">
+
+                            <span>
+                                Course progress
+                            </span>
+
+                            <strong>
+                                31%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-track">
+
+                            <div class="progress-fill astro-progress"></div>
+
+                        </div>
+
+                        <a href="#" class="card-link">
+                            Continue learning <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- ALL COURSES -->
+            <section class="section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            EXPLORE
+                        </p>
+
+                        <h2>
+                            All courses
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="learning-grid">
+
+
+                    <article class="learning-card">
+
+                        <div class="card-top">
+
+                            <span class="subject-icon physics-icon">
+                                ⚛
+                            </span>
+
+                        </div>
+
+                        <p class="card-category">
+                            PHYSICS
+                        </p>
+
+                        <h3>
+                            Waves
+                        </h3>
+
+                        <p class="card-description">
+                            Oscillations, sound and electromagnetic waves.
+                        </p>
+
+                        <a href="#" class="card-link">
+                            Explore course <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <article class="learning-card">
+
+                        <div class="card-top">
+
+                            <span class="subject-icon maths-icon">
+                                ◇
+                            </span>
+
+                        </div>
+
+                        <p class="card-category">
+                            MATHEMATICS
+                        </p>
+
+                        <h3>
+                            Geometry
+                        </h3>
+
+                        <p class="card-description">
+                            Shapes, transformations and mathematical proof.
+                        </p>
+
+                        <a href="#" class="card-link">
+                            Explore course <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <article class="learning-card">
+
+                        <div class="card-top">
+
+                            <span class="subject-icon astro-icon">
+                                🌌
+                            </span>
+
+                        </div>
+
+                        <p class="card-category">
+                            ASTROPHYSICS
+                        </p>
+
+                        <h3>
+                            Celestial Mechanics
+                        </h3>
+
+                        <p class="card-description">
+                            Gravity, orbits and planetary motion.
+                        </p>
+
+                        <a href="#" class="card-link">
+                            Explore course <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <article class="learning-card">
+
+                        <div class="card-top">
+
+                            <span class="subject-icon physics-icon">
+                                ⚗
+                            </span>
+
+                        </div>
+
+                        <p class="card-category">
+                            CHEMISTRY
+                        </p>
+
+                        <h3>
+                            Organic Chemistry
+                        </h3>
+
+                        <p class="card-description">
+                            Structure, reactions and carbon compounds.
+                        </p>
+
+                        <a href="#" class="card-link">
+                            Explore course <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- DAILY CHALLENGE -->
+            <section class="section">
+
+                <div class="practice-card">
+
+                    <div>
+
+                        <span class="practice-icon">
+                            ✦
+                        </span>
+
+                        <h3>
+                            Daily Challenge
+                        </h3>
+
+                        <p>
+                            One problem designed to stretch your scientific thinking.
+                        </p>
+
+                    </div>
+
+                    <a href="practice.html" class="secondary-button">
+                        Start challenge →
+                    </a>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- SETTINGS PANEL -->
+    <div class="settings-overlay" id="settings-overlay">
+
+        <section class="settings-panel" id="settings-panel" role="dialog" aria-modal="true"
+            aria-labelledby="settings-title">
+
+
+            <!-- HEADER -->
+            <div class="settings-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        PERSONALISE YOUR UNIVERSE
+                    </p>
+
+                    <h2 id="settings-title">
+                        Appearance
+                    </h2>
+
+                </div>
+
+                <button class="settings-close" id="settings-close" aria-label="Close settings">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <!-- THEMES -->
+            <div class="settings-section">
+
+                <h3>
+                    Choose your universe
+                </h3>
+
+                <p class="settings-description">
+                    Every universe has its own colours and background.
+                </p>
+
+                <div class="theme-grid">
+
+
+                    <button class="theme-option" data-theme="nova">
+
+                        <span class="theme-preview preview-nova">
+                            <span>✦</span>
+                        </span>
+
+                        <span class="theme-name">
+                            NOVA
+                        </span>
+
+                        <span class="theme-subtitle">
+                            Cosmic purple
+                        </span>
+
+                    </button>
+
+
+                    <button class="theme-option" data-theme="ocean">
+
+                        <span class="theme-preview preview-ocean">
+                            <span>≈</span>
+                        </span>
+
+                        <span class="theme-name">
+                            Ocean
+                        </span>
+
+                        <span class="theme-subtitle">
+                            Deep blue
+                        </span>
+
+                    </button>
+
+
+                    <button class="theme-option" data-theme="midnight">
+
+                        <span class="theme-preview preview-midnight">
+                            <span>☾</span>
+                        </span>
+
+                        <span class="theme-name">
+                            Midnight
+                        </span>
+
+                        <span class="theme-subtitle">
+                            Dark minimal
+                        </span>
+
+                    </button>
+
+
+                    <button class="theme-option" data-theme="forest">
+
+                        <span class="theme-preview preview-forest">
+                            <span>♧</span>
+                        </span>
+
+                        <span class="theme-name">
+                            Forest
+                        </span>
+
+                        <span class="theme-subtitle">
+                            Emerald green
+                        </span>
+
+                    </button>
+
+
+                    <button class="theme-option" data-theme="solar">
+
+                        <span class="theme-preview preview-solar">
+                            <span>☼</span>
+                        </span>
+
+                        <span class="theme-name">
+                            Solar
+                        </span>
+
+                        <span class="theme-subtitle">
+                            Solar flare
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LIGHT / DARK -->
+            <div class="settings-section">
+
+                <h3>
+                    Appearance mode
+                </h3>
+
+                <div class="mode-options">
+
+                    <button class="mode-option" data-mode="dark">
+                        <span>☾</span>
+                        Dark
+                    </button>
+
+                    <button class="mode-option" data-mode="light">
+                        <span>☀</span>
+                        Light
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCENT COLOUR -->
+            <div class="settings-section">
+
+                <h3>
+                    Accent colour
+                </h3>
+
+                <p class="settings-description">
+                    Choose the colour of your buttons, highlights and icons.
+                </p>
+
+                <div class="accent-options">
+
+                    <button class="accent-option" data-accent="#9b8cff" style="--swatch: #9b8cff"
+                        aria-label="Purple accent">
+                    </button>
+
+                    <button class="accent-option" data-accent="#43c6f5" style="--swatch: #43c6f5"
+                        aria-label="Blue accent">
+                    </button>
+
+                    <button class="accent-option" data-accent="#61d6a0" style="--swatch: #61d6a0"
+                        aria-label="Green accent">
+                    </button>
+
+                    <button class="accent-option" data-accent="#ff9565" style="--swatch: #ff9565"
+                        aria-label="Orange accent">
+                    </button>
+
+                    <button class="accent-option" data-accent="#f071b8" style="--swatch: #f071b8"
+                        aria-label="Pink accent">
+                    </button>
+
+                </div>
+
+
+                <!-- CUSTOM COLOUR -->
+
+                <div class="custom-accent">
+
+                    <label for="custom-accent-color">
+                        Custom colour
+                    </label>
+
+                    <input type="color" id="custom-accent-color" value="#9b8cff"
+                        aria-label="Choose a custom accent colour">
+
+                </div>
+
+
+                <!-- CUSTOM BACKGROUND -->
+
+                <div class="settings-section">
+
+                    <h3>Background</h3>
+
+                    <p class="settings-description">
+                        Choose one of NOVA's backgrounds or upload your own.
+                    </p>
+
+                    <label class="background-upload" for="background-upload">
+
+                        <span>
+                            🖼 Upload your own image
+                        </span>
+
+                    </label>
+
+                    <input type="file" id="background-upload" accept="image/*" hidden>
+
+
+                    <button class="reset-appearance" id="use-theme-background">
+
+                        Use theme background
+
+                    </button>
+
+                </div>
+
+
+                <!-- RESET -->
+
+                <button class="reset-appearance" id="reset-appearance">
+
+                    Reset appearance
+
+                </button>
+            </div>
+
+
+        </section>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,2455 @@
+/* =====================================
+   1. NOVA DEFAULT THEME
+===================================== */
+
+:root {
+    --background: #080b14;
+    --sidebar: #0c101c;
+    --surface: #111725;
+    --surface-hover: #171f30;
+    --border: #222b3d;
+
+    --text: #f2f4fc;
+    --muted: #8993a9;
+
+    --purple: #9b8cff;
+    --blue: #7aabff;
+    --cyan: #6fe4e0;
+
+    --accent: var(--purple);
+
+    --theme-background: url("./images/planet.jpg");
+}
+
+
+/* =====================================
+   2. OCEAN THEME
+===================================== */
+
+:root[data-theme="ocean"] {
+    --background: #07111e;
+    --sidebar: #091827;
+    --surface: #0e2032;
+    --surface-hover: #142b40;
+    --border: #1e3a52;
+
+    --text: #e8f5ff;
+    --muted: #8baabd;
+
+    --accent: #43c6f5;
+    --purple: var(--accent);
+    --blue: #64aaff;
+    --cyan: #6fe4e0;
+
+    --theme-background: url("./images/ocean.jpg");
+}
+
+
+/* =====================================
+   3. MIDNIGHT THEME
+===================================== */
+
+:root[data-theme="midnight"] {
+    --background: #050507;
+    --sidebar: #09090e;
+    --surface: #101015;
+    --surface-hover: #1a1a23;
+    --border: #292934;
+
+    --text: #f1f1f7;
+    --muted: #9292a5;
+
+    --accent: #b3b3c7;
+    --purple: var(--accent);
+    --blue: #9292b8;
+    --cyan: #c5c5d8;
+
+    --theme-background: url("./images/midnight.jpg");
+}
+
+
+/* =====================================
+   4. FOREST THEME
+===================================== */
+
+:root[data-theme="forest"] {
+    --background: #09130f;
+    --sidebar: #0c1a14;
+    --surface: #12221a;
+    --surface-hover: #1a3024;
+    --border: #294333;
+
+    --text: #eaf7ef;
+    --muted: #91ad9b;
+
+    --accent: #61d6a0;
+    --purple: var(--accent);
+    --blue: #91d8b4;
+    --cyan: #a0edca;
+
+    --theme-background: url("./images/forest.jpg");
+}
+
+
+/* =====================================
+   5. SOLAR THEME
+===================================== */
+
+:root[data-theme="solar"] {
+    --background: #160d0b;
+    --sidebar: #20110e;
+    --surface: #291714;
+    --surface-hover: #382019;
+    --border: #543127;
+
+    --text: #fff0e9;
+    --muted: #c19a8c;
+
+    --accent: #ff9565;
+    --purple: var(--accent);
+    --blue: #ffb16d;
+    --cyan: #ffcc91;
+
+    --theme-background: url("./images/solar.jpg");
+}
+
+
+/* =====================================
+   6. LIGHT MODE
+===================================== */
+
+:root[data-mode="light"] {
+    --background: #f3f5fa;
+    --sidebar: #ffffff;
+    --surface: #ffffff;
+    --surface-hover: #e9edf5;
+    --border: #dce2ed;
+
+    --text: #172033;
+    --muted: #65718a;
+}
+
+
+/* =====================================
+   GLOBAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    position: relative;
+}
+
+header,
+main,
+footer,
+.sidebar,
+.topbar {
+    position: relative;
+    z-index: 1;
+}
+
+h1,
+h2,
+h3,
+.logo {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
+    background: #7664e5;
+    color: white;
+}
+
+
+/* =====================================
+   2. SIDEBAR
+===================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 245px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px 20px;
+
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -1px;
+
+    margin-bottom: 45px;
+}
+
+.logo-symbol {
+    color: var(--purple);
+    font-size: 28px;
+
+    text-shadow:
+        0 0 20px #9b8cff80;
+}
+
+.nav-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: #69748c;
+
+    margin:
+        0 0 14px 10px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    width: 100%;
+    padding: 13px 14px;
+
+    border-radius: 10px;
+    border: none;
+
+    background: transparent;
+    color: var(--muted);
+
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+
+    font-family: inherit;
+
+    transition: 0.2s ease;
+}
+
+.nav-item span {
+    font-size: 17px;
+    width: 20px;
+    text-align: center;
+}
+
+.nav-item:hover {
+    background: var(--surface-hover);
+    color: var(--text);
+}
+
+.nav-item.active {
+    background: #8270ed18;
+    color: var(--purple);
+    border: 1px solid #8270ed25;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 25px 0;
+}
+
+.sidebar-spacer {
+    flex: 1;
+    min-height: 30px;
+}
+
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 25px;
+    padding: 15px 5px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.avatar,
+.top-avatar {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(135deg,
+            #8171e8,
+            #4c9fe6);
+
+    color: white;
+    font-weight: 700;
+}
+
+.sidebar-profile strong {
+    font-size: 13px;
+}
+
+.sidebar-profile p {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.profile-menu {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 20px;
+}
+
+
+/* =====================================
+   3. MAIN APPLICATION
+===================================== */
+
+.app {
+    margin-left: 245px;
+    min-height: 100vh;
+
+    position: relative;
+    z-index: 1;
+}
+
+.topbar {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 45px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: var(--background);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 50;
+
+    backdrop-filter: blur(20px);
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 12px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: 230px;
+    height: 40px;
+
+    padding: 0 13px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    color: var(--muted);
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: var(--text);
+    font-size: 12px;
+}
+
+.search-box input::placeholder {
+    color: #78839a;
+}
+
+.search-shortcut {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+
+    padding: 2px 6px;
+
+    font-size: 11px;
+}
+
+.create-button {
+    background: var(--purple);
+    color: #0b0b16;
+
+    border: none;
+    border-radius: 9px;
+
+    padding: 12px 18px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.create-button:hover {
+    background: #b5aaff;
+    transform: translateY(-1px);
+}
+
+.streak {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 13px;
+}
+
+.top-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   4. DASHBOARD
+===================================== */
+
+.dashboard {
+    max-width: 1450px;
+    margin: 0 auto;
+
+    padding: 45px;
+}
+
+.section {
+    margin-top: 55px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    color: var(--muted);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 22px;
+    letter-spacing: -0.7px;
+    margin-top: 8px;
+}
+
+.section-number {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+
+/* =====================================
+   5. WELCOME
+===================================== */
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+
+    margin-bottom: 32px;
+}
+
+.welcome h1 {
+    font-size:
+        clamp(27px,
+            3vw,
+            38px);
+
+    letter-spacing: -1.5px;
+    margin-top: 12px;
+}
+
+.welcome h1 span {
+    color: var(--purple);
+    font-size: 24px;
+}
+
+.welcome-subtitle {
+    color: var(--muted);
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.welcome-decoration {
+    font-size: 90px;
+    color: #9b8cff20;
+    padding-right: 30px;
+}
+
+
+/* =====================================
+   6. ASK NOVA
+===================================== */
+
+.ask-section {
+    margin-bottom: 50px;
+}
+
+.ask-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 10px 12px 10px 20px;
+
+    min-height: 65px;
+
+    background: var(--surface);
+    border: 1px solid #343c53;
+    border-radius: 14px;
+
+    transition:
+        border 0.2s,
+        box-shadow 0.2s;
+}
+
+.ask-box:focus-within {
+    border-color: var(--purple);
+
+    box-shadow:
+        0 0 25px #9b8cff12;
+}
+
+.ask-icon {
+    color: var(--purple);
+    font-size: 23px;
+}
+
+.ask-box input {
+    flex: 1;
+    min-width: 0;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: var(--text);
+    font-size: 14px;
+}
+
+.ask-box input::placeholder {
+    color: #78839a;
+}
+
+.ask-button {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--purple);
+    color: #080b14;
+
+    font-size: 24px;
+
+    transition: 0.2s;
+}
+
+.ask-button:hover {
+    background: #b5aaff;
+    transform: translateX(2px);
+}
+
+.ask-hint {
+    margin: 12px 0 0 8px;
+
+    color: #68738b;
+    font-size: 11px;
+}
+
+
+/* =====================================
+   7. TODAY'S DISCOVERY CAROUSEL
+===================================== */
+
+.discovery-carousel-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 340px;
+
+    overflow: hidden;
+}
+
+
+/* CAROUSEL WINDOW */
+
+.discovery-carousel {
+    width: 100%;
+    height: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+
+    cursor: grab;
+    user-select: none;
+
+    touch-action: pan-y;
+
+    scroll-behavior: smooth;
+}
+
+.discovery-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.discovery-carousel.is-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+
+/* MOVING TRACK */
+
+.discovery-track {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    width: max-content;
+    height: 100%;
+
+    padding-left:
+        calc((100% - 520px) / 2);
+
+    padding-right:
+        calc((100% - 520px) / 2);
+}
+
+
+/* DISCOVERY CARD */
+
+.discovery-card {
+    position: relative;
+
+    flex: 0 0 520px;
+    width: 520px;
+    height: 290px;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    border: 1px solid #34304f;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(110deg,
+            #151b30,
+            #101426 65%,
+            #1a1534);
+
+    opacity: 0.35;
+
+    transform: scale(0.82);
+
+    filter: brightness(0.5);
+
+    flex-shrink: 0;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease,
+        filter 0.35s ease;
+}
+
+
+/* MAIN CARD */
+
+.discovery-card.is-active {
+    opacity: 1;
+
+    transform: scale(1);
+
+    filter: brightness(1);
+
+    z-index: 5;
+}
+
+
+/* CARDS NEXT TO MAIN */
+
+.discovery-card.is-prev,
+.discovery-card.is-next {
+    opacity: 0.58;
+
+    transform: scale(0.88);
+
+    filter: brightness(0.68);
+
+    z-index: 3;
+}
+
+
+/* FAR CARDS */
+
+.discovery-card.is-far {
+    opacity: 0.22;
+
+    transform: scale(0.80);
+
+    filter: brightness(0.42);
+
+    z-index: 1;
+}
+
+
+/* CONTENT */
+
+.discovery-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 52%;
+    max-width: 440px;
+}
+
+
+/* TAG */
+
+.discovery-tag {
+    display: inline-block;
+
+    color:
+        var(--discovery-accent);
+
+    background:
+        color-mix(in srgb,
+            var(--discovery-accent) 10%,
+            transparent);
+
+    border:
+        1px solid color-mix(in srgb,
+            var(--discovery-accent) 30%,
+            transparent);
+
+    border-radius: 30px;
+
+    padding: 7px 11px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* TITLE */
+
+.discovery-content h3 {
+    font-size:
+        clamp(25px,
+            2.5vw,
+            31px);
+
+    line-height: 1.2;
+
+    letter-spacing: -0.8px;
+
+    margin-top: 16px;
+}
+
+
+/* DESCRIPTION */
+
+.discovery-content p {
+    color: #a0a8be;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    max-width: 350px;
+
+    margin: 12px 0 20px;
+}
+
+
+/* BUTTON */
+
+.discovery-card .primary-button {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 11px;
+
+    background:
+        var(--discovery-accent);
+
+    color: #080b14;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.discovery-card .primary-button span {
+    font-size: 13px;
+}
+
+
+/* IMAGE */
+
+.discovery-visual {
+    position: absolute;
+
+    width: 210px;
+    height: 230px;
+
+    right: 3%;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #101426;
+}
+
+.discovery-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* ARROWS */
+
+.discovery-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    width: 40px;
+    height: 40px;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #34304f;
+
+    border-radius: 50%;
+
+    background: #151b30;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.discovery-arrow:hover {
+    transform:
+        translateY(-50%) scale(1.08);
+
+    background: #252e48;
+
+    border-color:
+        var(--purple);
+}
+
+.discovery-prev {
+    left: 8px;
+}
+
+.discovery-next {
+    right: 8px;
+}
+
+
+/* DISCOVERY RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .discovery-track {
+        padding-left:
+            calc((100% - 500px) / 2);
+
+        padding-right:
+            calc((100% - 500px) / 2);
+    }
+
+    .discovery-card {
+        flex-basis: 500px;
+        width: 500px;
+    }
+
+    .discovery-content {
+        width: 53%;
+    }
+
+    .discovery-visual {
+        width: 38%;
+        height: 210px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .discovery-carousel-wrapper {
+        height: 470px;
+    }
+
+    .discovery-track {
+        padding-left:
+            calc((100% - 86vw) / 2);
+
+        padding-right:
+            calc((100% - 86vw) / 2);
+    }
+
+    .discovery-card {
+        flex-basis: 86vw;
+        width: 86vw;
+
+        height: 420px;
+
+        padding: 25px;
+    }
+
+    .discovery-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .discovery-content h3 {
+        font-size: 28px;
+    }
+
+    .discovery-visual {
+        width: 55%;
+        height: 180px;
+
+        right: 20px;
+
+        top: auto;
+        bottom: 20px;
+
+        transform: none;
+    }
+
+    .discovery-arrow {
+        width: 38px;
+        height: 38px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* =====================================
+   8. LEARNING CARDS
+===================================== */
+
+.learning-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,
+            minmax(0,
+                1fr));
+
+    gap: 20px;
+}
+
+.learning-card {
+    min-width: 0;
+
+    padding: 24px;
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition: 0.25s;
+}
+
+.learning-card:hover {
+    transform:
+        translateY(-4px);
+
+    background:
+        var(--surface-hover);
+
+    border-color:
+        #414b65;
+}
+
+.card-top {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+}
+
+.subject-icon {
+    display: grid;
+
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+
+    font-size: 23px;
+}
+
+.physics-icon {
+    background: #8a7aff20;
+    color: #a99cff;
+}
+
+.maths-icon {
+    background: #6faeff20;
+    color: #80b8ff;
+}
+
+.astro-icon {
+    background: #d17bff20;
+    color: #d9a0ff;
+}
+
+.card-menu {
+    font-size: 22px;
+    color: var(--muted);
+}
+
+.card-category {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: var(--muted);
+
+    margin-top: 25px;
+}
+
+.learning-card h3 {
+    font-size: 20px;
+
+    margin-top: 8px;
+
+    letter-spacing: -0.5px;
+}
+
+.card-description {
+    font-size: 12px;
+
+    color: var(--muted);
+
+    margin-top: 8px;
+
+    min-height: 18px;
+}
+
+.progress-info {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+    color: var(--muted);
+}
+
+.progress-info strong {
+    color: var(--text);
+}
+
+.progress-track {
+    width: 100%;
+    height: 5px;
+
+    background: #252d3e;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+
+    border-radius: 10px;
+}
+
+.physics-progress {
+    width: 78%;
+
+    background:
+        linear-gradient(90deg,
+            #8270ed,
+            #b1a4ff);
+}
+
+.maths-progress {
+    width: 46%;
+
+    background:
+        linear-gradient(90deg,
+            #5295e8,
+            #85c3ff);
+}
+
+.astro-progress {
+    width: 31%;
+
+    background:
+        linear-gradient(90deg,
+            #ad70e8,
+            #d5a2ff);
+}
+
+.card-link {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-top: 25px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #b7aaff;
+
+    transition: 0.2s;
+}
+
+.card-link:hover {
+    color: white;
+}
+
+.card-link span {
+    font-size: 18px;
+}
+
+
+/* =====================================
+   9. LABORATORY
+===================================== */
+
+.lab-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+    min-height: 280px;
+
+    background:
+        linear-gradient(110deg,
+            #101e28,
+            #111725 60%,
+            #12162a);
+
+    border:
+        1px solid #273a4b;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    padding: 35px;
+}
+
+.lab-content {
+    flex: 1;
+}
+
+.lab-content h3 {
+    font-size: 27px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.7px;
+
+    margin-top: 20px;
+}
+
+.lab-content p {
+    max-width: 430px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin: 15px 0 22px;
+}
+
+
+/* Orbit */
+
+.lab-visual {
+    position: relative;
+
+    flex: 0 0 220px;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            #1b496030,
+            transparent 70%);
+}
+
+.lab-orbit {
+    position: absolute;
+
+    width: 200px;
+    height: 80px;
+
+    top: 50%;
+    left: 50%;
+
+    border:
+        1px solid #70d8e075;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%,
+            -50%) rotate(-40deg);
+}
+
+.lab-planet {
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%,
+            -50%);
+
+    background:
+        radial-gradient(circle at 30% 30%,
+            #7adfe4,
+            #287baf 70%,
+            #14395b);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 40px #54c9e350;
+}
+
+.lab-moon {
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    top: 24%;
+    right: 10%;
+
+    border-radius: 50%;
+
+    background: #c0b8ff;
+
+    box-shadow:
+        0 0 20px #9b8cff;
+}
+
+
+/* =====================================
+   10. PRACTICE + CHEMISTRY
+===================================== */
+
+.text-link {
+    color: var(--purple);
+    font-size: 12px;
+}
+
+.practice-card {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 28px;
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+}
+
+.practice-icon {
+    display: inline-block;
+
+    font-size: 24px;
+
+    color: var(--purple);
+
+    margin-bottom: 12px;
+}
+
+.practice-card h3 {
+    font-size: 19px;
+}
+
+.practice-card p {
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.secondary-button {
+    flex-shrink: 0;
+
+    display: inline-block;
+
+    padding: 13px 17px;
+
+    border:
+        1px solid #47415e;
+
+    border-radius: 9px;
+
+    color: var(--purple);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.secondary-button:hover {
+    background: #9b8cff15;
+
+    border-color:
+        var(--purple);
+}
+
+
+/* =====================================
+   11. FOOTER
+===================================== */
+
+.footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 20px;
+
+    margin-top: 80px;
+
+    padding: 30px 0;
+
+    border-top:
+        1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.footer .logo {
+    font-size: 17px;
+    margin: 0;
+}
+
+.footer .logo-symbol {
+    font-size: 20px;
+}
+
+
+/* =====================================
+   12. RESPONSIVE
+===================================== */
+
+@media (max-width: 1200px) {
+
+    .dashboard {
+        padding: 35px 30px;
+    }
+
+    .topbar {
+        padding: 0 30px;
+    }
+
+    .learning-grid {
+        grid-template-columns:
+            repeat(2,
+                minmax(0,
+                    1fr));
+    }
+
+    /* IMPORTANT:
+       No discovery-card size override here.
+       The carousel controls its own size above.
+    */
+}
+
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 80px;
+        padding: 25px 12px;
+    }
+
+    .sidebar .logo {
+        justify-content: center;
+        font-size: 0;
+    }
+
+    .sidebar .logo-symbol {
+        font-size: 30px;
+    }
+
+    .nav-label,
+    .nav-item,
+    .sidebar-profile,
+    .sidebar-divider {
+        font-size: 0;
+    }
+
+    .nav-label {
+        display: none;
+    }
+
+    .sidebar-nav {
+        align-items: center;
+    }
+
+    .nav-item {
+        justify-content: center;
+
+        width: 48px;
+        height: 48px;
+
+        padding: 0;
+    }
+
+    .nav-item span {
+        font-size: 20px;
+    }
+
+    .sidebar-profile {
+        justify-content: center;
+    }
+
+    .sidebar-profile .avatar {
+        flex-shrink: 0;
+    }
+
+    .app {
+        margin-left: 80px;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .breadcrumb {
+        display: none;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .dashboard {
+        padding: 30px 18px;
+    }
+
+    .discovery-carousel-wrapper {
+        height: 470px;
+    }
+
+    .discovery-card {
+        width: 86vw;
+        flex-basis: 86vw;
+
+        height: 420px;
+
+        padding: 25px;
+    }
+
+    .discovery-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .discovery-content h3 {
+        font-size: 28px;
+    }
+
+    .discovery-visual {
+        width: 55%;
+        height: 180px;
+
+        right: 20px;
+
+        top: auto;
+        bottom: 20px;
+
+        transform: none;
+    }
+
+    .discovery-arrow {
+        width: 38px;
+        height: 38px;
+
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .app {
+        margin-left: 0;
+    }
+
+    .topbar {
+        height: 65px;
+
+        padding: 0 15px;
+    }
+
+    .topbar-right {
+        gap: 10px;
+        width: 100%;
+    }
+
+    .search-box {
+        flex: 1;
+        width: auto;
+    }
+
+    .create-button {
+        padding: 10px;
+        font-size: 11px;
+    }
+
+    .streak {
+        display: none;
+    }
+
+    .welcome h1 {
+        font-size: 27px;
+    }
+
+    .welcome-decoration {
+        display: none;
+    }
+
+    .section {
+        margin-top: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-card {
+        padding: 22px;
+    }
+
+    .lab-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px;
+
+        gap: 20px;
+    }
+
+    .lab-visual {
+        align-self: center;
+
+        flex-basis: 180px;
+
+        width: 180px;
+        height: 180px;
+    }
+
+    .lab-orbit {
+        width: 170px;
+    }
+
+    .lab-content h3 {
+        font-size: 24px;
+    }
+
+    .practice-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* =====================================
+   13. NOVA PLANET BACKGROUND
+===================================== */
+
+.planet-background {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 55vw;
+    height: 100vh;
+
+    background-image:
+        var(--custom-background,
+            var(--theme-background));
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    -webkit-mask-image:
+        linear-gradient(to right,
+            transparent 0%,
+            black 45%,
+            black 100%),
+        linear-gradient(to bottom,
+            transparent 0%,
+            black 30%,
+            black 75%,
+            transparent 100%);
+
+    mask-image:
+        linear-gradient(to right,
+            transparent 0%,
+            black 45%,
+            black 100%),
+        linear-gradient(to bottom,
+            transparent 0%,
+            black 30%,
+            black 75%,
+            transparent 100%);
+
+    mask-composite: intersect;
+
+    -webkit-mask-composite: source-in;
+
+    opacity: 0.6;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   NOVA APPEARANCE SETTINGS
+===================================== */
+
+.settings-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: flex-end;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(5px);
+
+    z-index: 1000;
+}
+
+.settings-overlay.open {
+    display: flex;
+}
+
+.settings-panel {
+    width: 430px;
+
+    max-width: 100%;
+
+    height: 100%;
+
+    overflow-y: auto;
+
+    padding: 35px;
+
+    background: var(--sidebar);
+
+    color: var(--text);
+
+    border-left:
+        1px solid var(--border);
+
+    box-shadow:
+        -20px 0 80px #00000030;
+
+    animation:
+        settingsSlideIn 0.25s ease;
+}
+
+@keyframes settingsSlideIn {
+
+    from {
+        transform:
+            translateX(30px);
+
+        opacity: 0;
+    }
+
+    to {
+        transform:
+            translateX(0);
+
+        opacity: 1;
+    }
+}
+
+.settings-header {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    margin-bottom: 35px;
+}
+
+.settings-header h2 {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.settings-close {
+    width: 38px;
+    height: 38px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    background:
+        var(--surface);
+
+    color:
+        var(--text);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.settings-close:hover {
+    background:
+        var(--surface-hover);
+
+    border-color:
+        var(--accent);
+}
+
+.settings-section {
+    margin-bottom: 35px;
+}
+
+.settings-section h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.settings-description {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+.theme-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,
+            minmax(0,
+                1fr));
+
+    gap: 12px;
+}
+
+.theme-option {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 10px;
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 13px;
+
+    color:
+        var(--text);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.theme-option:hover {
+    background:
+        var(--surface-hover);
+
+    transform:
+        translateY(-2px);
+}
+
+.theme-option.selected {
+    border:
+        2px solid var(--accent);
+
+    padding: 9px;
+
+    box-shadow:
+        0 0 20px color-mix(in srgb,
+            var(--accent) 12%,
+            transparent);
+}
+
+.theme-preview {
+    display: grid;
+
+    place-items: center;
+
+    width: 100%;
+    height: 90px;
+
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+
+    font-size: 32px;
+
+    overflow: hidden;
+}
+
+.preview-nova {
+    background:
+        radial-gradient(circle at 70% 50%,
+            #49318d,
+            transparent 60%),
+        #080b14;
+
+    color: #b8aaff;
+}
+
+.preview-ocean {
+    background:
+        radial-gradient(circle at 70% 50%,
+            #17608a,
+            transparent 60%),
+        #07111e;
+
+    color: #43c6f5;
+}
+
+.preview-midnight {
+    background:
+        radial-gradient(circle at 70% 50%,
+            #30303c,
+            transparent 60%),
+        #050507;
+
+    color: #b3b3c7;
+}
+
+.preview-forest {
+    background:
+        radial-gradient(circle at 70% 50%,
+            #205c3e,
+            transparent 60%),
+        #09130f;
+
+    color: #61d6a0;
+}
+
+.preview-solar {
+    background:
+        radial-gradient(circle at 70% 50%,
+            #a33e20,
+            transparent 60%),
+        #160d0b;
+
+    color: #ff9565;
+}
+
+.theme-name {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.theme-subtitle {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    margin-top: 4px;
+}
+
+.mode-options {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+}
+
+.mode-option {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    color:
+        var(--text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.mode-option span {
+    font-size: 18px;
+}
+
+.mode-option:hover {
+    background:
+        var(--surface-hover);
+}
+
+.mode-option.selected {
+    border-color:
+        var(--accent);
+
+    color:
+        var(--accent);
+
+    background:
+        var(--surface-hover);
+}
+
+.accent-options {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 15px;
+}
+
+.accent-option {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    border:
+        3px solid var(--swatch);
+
+    background:
+        var(--swatch);
+
+    outline:
+        2px solid transparent;
+
+    outline-offset: 3px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.accent-option:hover {
+    transform:
+        scale(1.12);
+}
+
+.accent-option.selected {
+    outline-color:
+        var(--text);
+}
+
+.reset-appearance {
+    margin-top: 25px;
+
+    width: 100%;
+
+    padding: 13px;
+
+    background:
+        transparent;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.reset-appearance:hover {
+    color:
+        var(--text);
+
+    border-color:
+        var(--accent);
+}
+
+.custom-accent {
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    margin-top: 18px;
+
+    padding: 12px 14px;
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    color:
+        var(--text);
+
+    font-size: 12px;
+}
+
+.custom-accent input {
+    width: 45px;
+    height: 32px;
+
+    padding: 0;
+
+    border: none;
+
+    background:
+        transparent;
+
+    cursor: pointer;
+}
+
+.background-upload {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 14px;
+
+    background:
+        var(--surface);
+
+    border:
+        1px dashed var(--border);
+
+    border-radius: 10px;
+
+    color:
+        var(--text);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.background-upload:hover {
+    background:
+        var(--surface-hover);
+
+    border-color:
+        var(--accent);
+
+    color:
+        var(--accent);
+}
+
+.custom-accent+.settings-section {
+    margin-top: 35px;
+}
+
+
+/* =====================================
+   SETTINGS MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .settings-panel {
+        width: 100%;
+
+        padding:
+            25px 20px;
+    }
+
+    .theme-preview {
+        height: 75px;
+    }
+}
+
+/* =====================================
+   DISCOVERY LIGHT MODE
+===================================== */
+
+[data-mode="light"] .discovery-card {
+    background: #f7f8fc;
+    border-color: #dfe3ed;
+    color: #172033;
+    box-shadow: 0 20px 50px rgba(30, 40, 70, 0.12);
+}
+
+[data-mode="light"] .discovery-card h3 {
+    color: #172033;
+}
+
+[data-mode="light"] .discovery-card p {
+    color: #5d6678;
+}
+
+[data-mode="light"] .discovery-tag {
+    color: var(--discovery-accent);
+    background: #eef0f8;
+    border-color: #d5d9e8;
+}
+
+[data-mode="light"] .discovery-card .primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 11px;
+
+    background: var(--discovery-accent);
+    color: #080b14;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+[data-mode="light"] .discovery-card.is-prev,
+[data-mode="light"] .discovery-card.is-next {
+    background: #eef1f6;
+}
+
+[data-mode="light"] .discovery-card.is-far {
+    background: #e7eaf0;
+}
+
+/* =====================================
+   DISCOVERY — MAKE ALL CONTENT FIT
+===================================== */
+
+.discovery-card .discovery-content h3 {
+    font-size: 28px;
+    line-height: 1.05;
+    margin-top: 14px;
+    margin-bottom: 8px;
+}
+
+.discovery-card .discovery-content p {
+    font-size: 11px;
+    line-height: 1.45;
+    margin: 8px 0 10px;
+}
+
+.discovery-card .primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+
+    padding: 8px 11px;
+
+    background: var(--discovery-accent);
+    color: #080b14;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+
+/* =====================================
+   DISCOVERY — LIGHT MODE COLOURS
+===================================== */
+
+[data-mode="light"] .discovery-card {
+    background: #f7f8fc;
+    border-color: #dfe3ed;
+    color: #172033;
+}
+
+[data-mode="light"] .discovery-card h3 {
+    color: #172033;
+}
+
+[data-mode="light"] .discovery-card p {
+    color: #5d6678;
+}
+
+[data-mode="light"] .discovery-tag {
+    background: #eef0f8;
+    border-color: #d5d9e8;
+}
+
+[data-mode="light"] .discovery-card.is-prev,
+[data-mode="light"] .discovery-card.is-next {
+    background: #eef1f6;
+}
+
+[data-mode="light"] .discovery-card.is-far {
+    background: #e7eaf0;
+}
